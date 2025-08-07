@@ -75,7 +75,8 @@
       id: "ph-gauge",
       min: 0,
       max: 14,
-      value: 7,
+      value: 7.00,
+      decimals: 2, // Show 2 decimal places
       levelColors: ["#ff0000", "#00cc00", "#0000ff"]
     });
 
@@ -99,7 +100,7 @@
           });
 
           tempGauge.refresh(data.temp || 0);
-          phGauge.refresh(data.ph || 0);
+          phGauge.refresh(parseFloat((data.ph || 0).toFixed(2))); // Format pH to 2 decimal places
           tdsGauge.refresh(data.tds || 0);
 
           let alerts = "";
