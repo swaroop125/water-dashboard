@@ -23,10 +23,7 @@ def handle_data():
             return "OK", 200
         return "No JSON received", 400
 
-    # If GET request (used by your JS fetch)
+    # If GET request
     with lock:
         text = f"temp={sensor_data['temp']}&ph={sensor_data['ph']}&tds={sensor_data['tds']}"
         return Response(text, mimetype='text/plain')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
