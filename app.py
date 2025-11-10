@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, Response
 from threading import Lock
 
 app = Flask(__name__)
-sensor_data = {"temp": 0, "tds": 0, "ph": 0}
+sensor_data = {"temp": 5, "tds": 0, "ph": 0}
 lock = Lock()
 
 @app.route('/')
